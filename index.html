@@ -42,11 +42,17 @@
     .cta-button:hover {
       background: #0088cc;
     }
+    .section-heading {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #003566;
+      margin: 2rem 2rem 1rem;
+    }
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      padding: 4rem 2rem;
+      padding: 2rem;
       background: #fff;
     }
     .feature-card {
@@ -100,16 +106,18 @@
     <a href="#features" class="cta-button">Explore Our Solutions</a>
   </header>
 
-  <section id="features" class="features">
-    <!-- Ready to Test -->
+  <h2 class="section-heading">✅ Ready to Test</h2>
+  <section class="features">
     <div class="feature-card">
       <img src="https://images.unsplash.com/photo-1581090700227-1e8d6f26b7e2?auto=format&fit=crop&w=800&q=60" alt="IFRS 16 Lease Tool" />
       <h3>🔍 IFRS 16 Lease Tool</h3>
       <p>Fully automated lease calculator with CPI adjustments, exemptions, schedules, and journal entries.</p>
       <a href="https://ifrs16-lease-tool-a8goudlp6jnndggqrfd97j.streamlit.app/" target="_blank" class="btn active">Try it</a>
     </div>
+  </section>
 
-    <!-- In Development -->
+  <h2 class="section-heading">🛠 In Development</h2>
+  <section class="features">
     <div class="feature-card">
       <img src="https://images.unsplash.com/photo-1647424327530-b2aa1b019e33?auto=format&fit=crop&w=800&q=60" alt="IFRS 9 ECL Model" />
       <h3>📊 IFRS 9 ECL Model</h3>
@@ -122,8 +130,16 @@
       <p>New update in progress: Adds reassessment logic, input toggles, and impact analysis for lease modifications.</p>
       <span class="btn disabled">New Update</span>
     </div>
+    <div class="feature-card">
+      <img src="https://images.unsplash.com/photo-1616594039964-9b40e6fd700e?auto=format&fit=crop&w=800&q=60" alt="UAE Tax Calculator" />
+      <h3>💰 UAE Corporate Tax Tool</h3>
+      <p>Simple UAE CT calculator with slabs, exemptions, and threshold visualization for SMEs and corporates.</p>
+      <span class="btn disabled">In Development</span>
+    </div>
+  </section>
 
-    <!-- Planned / Vision -->
+  <h2 class="section-heading">🚀 Planned / Vision</h2>
+  <section class="features">
     <div class="feature-card">
       <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=60" alt="AI Code Generator" />
       <h3>🤖 AI Code Generator</h3>
@@ -140,7 +156,7 @@
       <img src="https://images.unsplash.com/photo-1531497865147-5c2b1e17148b?auto=format&fit=crop&w=800&q=60" alt="Lease AI Extractor" />
       <h3>🚀 Lease Contract AI Extractor</h3>
       <p>AI-powered lease scanner to auto-fill IFRS 16 input fields from uploaded agreements.</p>
-      <span class="btn disabled">Vision</span>
+      <span class="btn disabled">Planned</span>
     </div>
     <div class="feature-card">
       <img src="https://images.unsplash.com/photo-1682685796675-e25b9b83611b?auto=format&fit=crop&w=800&q=60" alt="IFRS GPT" />
