@@ -69,54 +69,27 @@
       margin-top: 0;
       color: #0a2540;
     }
-    .about {
-      background: #fff;
-      padding: 4rem 2rem;
-      text-align: center;
+    .feature-card p {
+      margin: 0.5rem 0 1rem;
     }
-    .about h2 {
-      color: #0a2540;
-    }
-    .about p {
-      max-width: 800px;
-      margin: 1rem auto;
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-    .contact {
-      padding: 4rem 2rem;
-      background: #eef2f7;
-      text-align: center;
-    }
-    .contact input, .contact textarea {
-      width: 100%;
-      max-width: 500px;
-      padding: 1rem;
-      margin: 0.5rem 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-    .contact button {
-      margin-top: 1rem;
-      padding: 0.75rem 2rem;
-      background: #0a2540;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
+    .feature-card .btn {
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+      border-radius: 6px;
       font-weight: 600;
-      cursor: pointer;
+      text-align: center;
     }
-    footer {
+    .feature-card .active {
       background: #0a2540;
       color: #fff;
-      text-align: center;
-      padding: 2rem;
-    }
-    footer a {
-      color: #00aaff;
       text-decoration: none;
-      margin: 0 1rem;
+    }
+    .feature-card .disabled {
+      background: #ccc;
+      color: #555;
+      opacity: 0.6;
+      cursor: not-allowed;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -131,83 +104,21 @@
     <div class="feature-card">
       <img src="https://images.unsplash.com/photo-1581090700227-1e8d6f26b7e2?auto=format&fit=crop&w=800&q=60" alt="IFRS 16 Lease Tool" />
       <h3>🔍 IFRS 16 Lease Tool</h3>
-<p>Fully automated lease calculator with CPI adjustments, exemptions, schedules, and journal entries.</p>
-<a href="https://ifrs16-lease-tool-a8goudlp6jnndggqrfd97j.streamlit.app/" target="_blank" style="display:inline-block;margin-top:1rem;padding:0.6rem 1.4rem;background:#0a2540;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;">Try it</a>
+      <p>Fully automated lease calculator with CPI adjustments, exemptions, schedules, and journal entries.</p>
+      <a href="https://ifrs16-lease-tool-a8goudlp6jnndggqrfd97j.streamlit.app/" target="_blank" class="btn active">Try it</a>
     </div>
     <div class="feature-card">
       <img src="https://images.unsplash.com/photo-1647424327530-b2aa1b019e33?auto=format&fit=crop&w=800&q=60" alt="IFRS 9 ECL Model" />
       <h3>📊 IFRS 9 ECL Model</h3>
-<p>$1</p>
-<span style="display:inline-block;margin-top:1rem;padding:0.5rem 1.2rem;background:#ccc;color:#555;border-radius:6px;font-weight:600;opacity:0.6;cursor:not-allowed;">Coming Soon</span>
+      <p>Expected Credit Loss model with staging, PD/LGD inputs, and customizable assumptions for any portfolio.</p>
+      <span class="btn disabled">Coming Soon</span>
     </div>
     <div class="feature-card">
       <img src="https://images.unsplash.com/photo-1644662319771-2023e9c324fa?auto=format&fit=crop&w=800&q=60" alt="AI Financial Models" />
       <h3>🧠 Financial AI Models</h3>
       <p>Streamlit-powered AI tools for decision-making, predictive insights, and data visualization.</p>
+      <span class="btn disabled">Coming Soon</span>
     </div>
   </section>
-
-  <section class="about">
-    <h2>🌐 Our Mission</h2>
-    <p>
-      QuantRealmTech was founded to bridge the gap between <strong>complex accounting standards</strong> and <strong>real-world application</strong>.
-      We understand the challenges finance professionals face when implementing IFRS and building models that matter.
-      <br /><br />
-      That’s why we’re building intelligent, automated tools — not just for compliance, but to empower decision-making, save time, and raise the standard of financial reporting.
-      <br /><br />
-      From auditors and CFOs to analysts and students, our goal is simple: make professional-grade models accessible to everyone.
-    </p>
-  </section>
-
-<section class="about">
-  <h2>🗺️ Project Roadmap</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;text-align:left;padding-top:2rem;">
-    <div>
-      <h3 style="color:#0a2540;">✅ Live Now</h3>
-      <ul>
-        <li>IFRS 16 Lease Tool (CPI, exemptions, schedules, journal entries)</li>
-      </ul>
-    </div>
-    <div>
-      <h3 style="color:#0a2540;">🚧 In Development</h3>
-      <ul>
-        <li>IFRS 9 ECL Model (PD/LGD, staging, assumptions)</li>
-        <li>Financial AI Dashboards (forecasting & diagnostics)</li>
-        <li>Lease AI Reader (auto-parse lease contracts)</li>
-      </ul>
-    </div>
-    <div>
-      <h3 style="color:#0a2540;">🧠 Planned / Vision</h3>
-      <ul>
-        <li>IFRS 16 v3 (multi-client, audit logs, PDF/Excel export)</li>
-        <li>IFRS 13 Fair Value Tool</li>
-        <li>IFRS 15 Revenue Recognition Tool</li>
-        <li>IFRS for SMEs conversion dashboard</li>
-        <li>PSX Screener (hidden gems, manipulation flags)</li>
-        <li>AI Assistant (code-correcting, model generator)</li>
-        <li>Monetization via Fiverr/Upwork + YouTube content</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="contact">
-    <h2>📬 Contact Us</h2>
-    <p>Have feedback or want a custom solution? Send us a message.</p>
-    <form action="https://formspree.io/f/mjvnyqpr" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>Connect with us: 
-      <a href="https://github.com/Blizz007" target="_blank">GitHub</a> | 
-      <a href="https://www.linkedin.com/in/YOUR-NAME" target="_blank">LinkedIn</a>
-    </p>
-    <p>&copy; 2025 QuantRealmTech. All rights reserved.</p>
-  </footer>
 </body>
 </html>
