@@ -4,12 +4,15 @@ body {
   background: #f7f9fc;
   color: #222;
 }
+
+/* HEADER */
 header {
   background: linear-gradient(135deg, #0a2540, #003566);
   color: #fff;
   padding: 0;
   text-align: center;
 }
+
 .header-flex {
   display: flex;
   align-items: center;
@@ -22,10 +25,12 @@ header {
   padding-right: 2rem;
   box-sizing: border-box;
 }
+
 .logo-flex {
   display: flex;
   align-items: center;
 }
+
 .site-logo {
   height: 64px;
   width: auto;
@@ -36,21 +41,25 @@ header {
   object-fit: contain;
   display: block;
 }
+
 .tagline {
   font-size: 1rem;
   color: #d6e4f0;
   margin-top: 0.2rem;
 }
+
 .brand-title {
   font-size: 2.2rem;
   font-weight: 700;
   color: #fff;
   letter-spacing: 1px;
 }
+
 .brand-title span {
   font-weight: 400;
   letter-spacing: 0.5px;
 }
+
 .linkedin-btn {
   display: flex;
   align-items: center;
@@ -66,23 +75,27 @@ header {
   gap: 0.4rem;
   margin-left: 1rem;
 }
+
 .linkedin-btn img {
   height: 26px;
   width: 26px;
   border-radius: 5px;
   margin-right: 0.3rem;
 }
+
 .header-bottom {
   margin-top: 0.2rem;
   text-align: center;
   padding-bottom: 1.4rem;
 }
+
 header p {
   font-size: 1.18rem;
   opacity: 0.97;
   margin-top: 0.4rem;
   color: #f0f4fa;
 }
+
 .cta-button {
   display: inline-block;
   margin-top: 2rem;
@@ -96,4 +109,111 @@ header p {
 }
 .cta-button:hover {
   background: #0088cc;
+}
+
+/* FEATURE SECTIONS */
+.section-heading {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #003566;
+  margin: 2rem 2rem 1rem;
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  background: #fff;
+}
+.feature-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+.feature-card img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #f2f5fa;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.feature-card h3 {
+  margin-top: 0;
+  color: #0a2540;
+  text-align: center;
+}
+.feature-card p {
+  margin: 0.5rem 0 1rem;
+  text-align: center;
+}
+.feature-card .btn {
+  display: block;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+  margin: 1.2rem auto 0 auto;
+  width: fit-content;
+  min-width: 140px;
+  max-width: 240px;
+}
+.feature-card .active {
+  background: #0a2540;
+  color: #fff;
+  text-decoration: none;
+}
+.feature-card .disabled {
+  background: #ccc;
+  color: #555;
+  opacity: 0.6;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 800px) {
+  .header-flex {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .features {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .header-flex {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1.5rem 0.5rem;
+  }
+  header {
+    padding: 1.2rem 0.4rem;
+  }
+  .brand-title {
+    font-size: 1.3rem;
+  }
+  .logo-flex img {
+    height: 40px;
+  }
+  .features {
+    padding: 0.3rem;
+  }
+  .feature-card {
+    padding: 1rem;
+  }
 }
