@@ -5,19 +5,369 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QuantRealmTech – Financial Intelligence. Automated.</title>
   <meta name="description" content="QuantRealmTech offers intelligent IFRS tools, financial automation, and modeling solutions for auditors and finance professionals." />
-  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" />
+  <style>
+    :root {
+      --main-bg: #0d1124;
+      --hero-glass: rgba(22, 28, 48, 0.88);
+      --card-glass: rgba(27, 36, 67, 0.72);
+      --accent1: #a960ee;
+      --accent2: #52e5e7;
+      --accent3: #5a7fff;
+      --text: #e9eafd;
+      --muted: #b7bacf;
+      --glow: 0 0 48px 2px #7b31fe88;
+      --shadow: 0 8px 24px rgba(35,38,77,0.13);
+      --gradient: linear-gradient(90deg,#52e5e7,#a960ee,#5a7fff);
+      --gradient-btn: linear-gradient(90deg,#52e5e7 0,#a960ee 70%,#5a7fff 100%);
+      --nav-bg: rgba(14,19,39,0.82);
+      --blur: blur(32px);
+    }
+    body {
+      margin: 0;
+      background: var(--main-bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .nav {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; z-index: 12;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--nav-bg);
+      padding: 1.6rem 2.6rem 1.2rem 2.6rem;
+      backdrop-filter: var(--blur);
+      box-shadow: 0 1px 24px 2px #181f2e44;
+    }
+    .nav-logo {
+      font-size: 2.1rem;
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      letter-spacing: 2px;
+      display: flex; align-items: center;
+      gap: 0.6rem;
+    }
+    .nav-logo span {
+      font-size: 1.4rem;
+      background: var(--gradient-btn);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      font-weight: 800;
+    }
+    .nav-links {
+      display: flex; gap: 2.2rem;
+      align-items: center;
+      font-size: 1.1rem;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #fff;
+    }
+    .nav-cta {
+      margin-left: 2rem;
+      padding: 0.6rem 1.5rem;
+      border-radius: 100px;
+      background: var(--gradient-btn);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.08rem;
+      box-shadow: 0 2px 22px 0 #a960ee55;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.14s, box-shadow 0.18s;
+    }
+    .nav-cta:hover {
+      transform: translateY(-3px) scale(1.055);
+      box-shadow: 0 2px 34px 0 #a960eeaa;
+    }
+    .theme-toggle {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 1.7rem;
+      cursor: pointer;
+      margin-left: 1.4rem;
+      transition: color 0.2s;
+      vertical-align: middle;
+    }
+    .hero-bg {
+      position: absolute;
+      width: 100vw; height: 60vh;
+      top: 0; left: 0; z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .blob {
+      position: absolute;
+      filter: blur(48px);
+      opacity: 0.59;
+      mix-blend-mode: lighten;
+      animation: blobmove 14s ease-in-out infinite alternate;
+    }
+    .blob1 {
+      background: radial-gradient(circle, #a960ee 0%, #232a4d00 90%);
+      width: 580px; height: 340px;
+      left: -90px; top: -120px;
+      animation-delay: 0s;
+    }
+    .blob2 {
+      background: radial-gradient(circle, #52e5e7 0%, #232a4d00 90%);
+      width: 420px; height: 320px;
+      left: 58vw; top: -85px;
+      animation-delay: 3s;
+    }
+    .blob3 {
+      background: radial-gradient(circle, #5a7fff 0%, #232a4d00 90%);
+      width: 340px; height: 200px;
+      left: 30vw; top: 100px;
+      animation-delay: 7s;
+    }
+    @keyframes blobmove {
+      0%   { transform: scale(1) translateY(0); }
+      60%  { transform: scale(1.09) translateY(12px); }
+      100% { transform: scale(1.18) translateY(-20px); }
+    }
+    .hero {
+      position: relative;
+      z-index: 3;
+      margin-top: 104px;
+      min-height: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .hero-glass {
+      margin-top: 1.5rem;
+      background: var(--hero-glass);
+      box-shadow: var(--glow);
+      border-radius: 2.2rem;
+      padding: 4.2rem 3.2rem 3.6rem 3.2rem;
+      backdrop-filter: blur(38px);
+      max-width: 640px;
+      width: 98vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .hero-title {
+      font-size: 2.75rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      text-align: center;
+      margin-bottom: 1.2rem;
+      filter: drop-shadow(0 4px 24px #a960eeaa);
+    }
+    .hero-tagline {
+      color: var(--muted);
+      font-size: 1.3rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      font-weight: 500;
+      max-width: 520px;
+    }
+    .hero-cta {
+      display: inline-block;
+      padding: 1.1rem 2.9rem;
+      border-radius: 100px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      background: var(--gradient-btn);
+      color: #fff;
+      text-decoration: none;
+      margin-top: 0.4rem;
+      box-shadow: 0 6px 34px #a960ee88;
+      border: none;
+      letter-spacing: 1px;
+      transition: transform 0.15s, box-shadow 0.16s;
+    }
+    .hero-cta:hover {
+      transform: scale(1.06) translateY(-2px);
+      box-shadow: 0 8px 54px #a960eecc;
+    }
+    .section-heading {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--accent1);
+      margin: 3.2rem 2rem 1rem;
+      text-shadow: 0 1px 12px #a960ee20;
+      letter-spacing: 1.5px;
+      text-align: center;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 2.2rem;
+      padding: 2.2rem 2.2vw;
+      background: none;
+      position: relative;
+      z-index: 4;
+    }
+    .feature-card {
+      background: var(--card-glass);
+      border-radius: 20px;
+      box-shadow: var(--shadow), 0 0 30px 0 #a960ee44;
+      padding: 2.2rem 1.4rem 2.5rem 1.4rem;
+      backdrop-filter: blur(22px);
+      transition: transform 0.17s, box-shadow 0.16s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      border: 2px solid #7b31fe14;
+    }
+    .feature-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 4px 48px #52e5e788, 0 2px 14px #a960ee44;
+      border-color: #7b31fe55;
+    }
+    .feature-card img {
+      width: 58px;
+      height: 58px;
+      border-radius: 15px;
+      margin-bottom: 1.1rem;
+      object-fit: cover;
+      box-shadow: 0 4px 22px #5a7fff33, 0 2px 8px #52e5e777;
+      background: #222b4a33;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      filter: saturate(1.25) brightness(1.09) drop-shadow(0 0 8px #a960ee44);
+    }
+    .feature-card h3 {
+      margin-top: 0;
+      color: #fff;
+      text-align: center;
+      font-size: 1.32rem;
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    .feature-card p {
+      margin: 0.5rem 0 1.1rem 0;
+      text-align: center;
+      min-height: 44px;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 1.04rem;
+    }
+    .feature-card .btn {
+      display: block;
+      padding: 0.66rem 1.3rem;
+      border-radius: 7px;
+      font-weight: 700;
+      text-align: center;
+      margin: 0 auto;
+      min-width: 116px;
+      margin-top: 0.8rem;
+      font-size: 1.05rem;
+      background: var(--gradient-btn);
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.6px;
+      box-shadow: 0 2px 18px #52e5e744;
+      transition: background 0.2s, box-shadow 0.18s, transform 0.18s;
+    }
+    .feature-card .btn.active:hover {
+      background: var(--gradient);
+      box-shadow: 0 4px 28px #7b31fe55;
+      transform: scale(1.045);
+    }
+    .feature-card .disabled {
+      background: #36395fbb;
+      color: #9fa7c6;
+      opacity: 0.72;
+      cursor: not-allowed;
+      text-decoration: none;
+      border: none;
+      margin: 0 auto;
+      font-weight: 700;
+    }
+    @media (max-width: 780px) {
+      .nav { flex-direction: column; gap: 1rem; padding: 1.1rem 1rem; }
+      .hero-glass { padding: 2.3rem 1.1rem; }
+      .features { grid-template-columns: 1fr; padding: 1.1rem 0.7rem; }
+      .section-heading { margin: 2.2rem 0.2rem 1rem; }
+      .nav-logo { font-size: 1.5rem; }
+    }
+    @media (max-width: 400px) {
+      .hero-glass { padding: 1rem 0.2rem; }
+      .nav { padding: 0.7rem 0.2rem; }
+    }
+  </style>
 </head>
 <body>
-  <div id="nav-placeholder"></div>
-  <div class="hero-bg" id="hero-bg-placeholder"></div>
-  <main>
-    <div id="hero-placeholder"></div>
-    <div id="ready-placeholder"></div>
-    <div id="development-placeholder"></div>
-    <div id="planned-placeholder"></div>
-  </main>
-  <script src="theme.js"></script>
-</body>
-</html>
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="nav-logo">QuantRealmTech <span>✦</span></div>
+    <div class="nav-links">
+      <a href="#features">Solutions</a>
+      <a href="#">About</a>
+      <a href="#">Blog</a>
+      <button class="nav-cta" onclick="window.location.href='https://ifrs16-lease-tool-a8goudlp6jnndggqrfd97j.streamlit.app/'">Try it</button>
+      <button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode">
+        <span id="toggle-icon">🌙</span>
+      </button>
+    </div>
+  </nav>
+  <!-- ANIMATED BLOBS -->
+  <div class="hero-bg">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </div>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-glass">
+      <div class="hero-title">Financial Intelligence. Automated.</div>
+      <div class="hero-tagline">The next-generation platform for IFRS automation, intelligent financial modeling, and audit-ready tools—built for ambitious finance professionals.</div>
+      <a href="#features" class="hero-cta">Explore Our Solutions</a>
+    </div>
+  </section>
+
+  <h2 class="section-heading">✅ Ready to Test</h2>
+  <section class="features">
+    <div class="feature-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/6025/6025931.png" alt="IFRS 16 Lease Tool" />
+      <h3>🔍 IFRS 16 Lease Tool</h3>
+      <p>Fully automated lease calculator with CPI adjustments, exemptions, schedules, and journal entries.</p>
+      <a href="https://ifrs16-lease-tool-a8goudlp6jnndggqrfd97j.streamlit.app/" target="_blank" class="btn active">Try it</a>
+    </div>
+  </section>
+
+  <h2 class="section-heading">🛠 In Development</h2>
+  <section class="features">
+    <div class="feature-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/4149/4149703.png" alt="IFRS 9 ECL Model" />
+      <h3>📊 IFRS 9 ECL Model</h3>
+      <p>Expected Credit Loss model with staging, PD/LGD inputs, and customizable assumptions for any portfolio.</p>
+      <span class="btn disabled">In Development</span>
+    </div>
+    <div class="feature-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2910/2910768.png" alt="IFRS 16 Update" />
+      <h3>✨ IFRS 16 Reassessment Module</h3>
+      <p>New update in progress: Adds reassessment logic, input toggles,
