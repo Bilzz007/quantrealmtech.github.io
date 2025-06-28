@@ -28,7 +28,7 @@
     header {
       background: linear-gradient(135deg, #0a2540, #003566);
       color: #fff;
-      padding: 2.5rem 2rem;
+      padding: 0;
       text-align: center;
     }
     .header-flex {
@@ -37,18 +37,25 @@
       justify-content: space-between;
       max-width: 960px;
       margin: 0 auto;
-      gap: 2rem;
+      padding-top: 2.2rem;
+      padding-bottom: 2.2rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      box-sizing: border-box;
     }
     .logo-flex {
       display: flex;
       align-items: center;
     }
-    .logo-flex img {
+    .site-logo {
       height: 64px;
+      width: auto;
       margin-right: 1.5rem;
       border-radius: 12px;
       background: #fff;
       box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      object-fit: contain;
+      display: block;
     }
     .tagline {
       font-size: 1rem;
@@ -78,15 +85,18 @@
       color: #0077b5;
       font-size: 1rem;
       gap: 0.4rem;
+      margin-left: 1rem;
     }
     .linkedin-btn img {
       height: 26px;
       width: 26px;
       border-radius: 5px;
+      margin-right: 0.3rem;
     }
     .header-bottom {
-      margin-top: 1.6rem;
+      margin-top: 0.2rem;
       text-align: center;
+      padding-bottom: 1.4rem;
     }
     header p {
       font-size: 1.18rem;
@@ -207,7 +217,7 @@
   <header>
     <div class="header-flex">
       <div class="logo-flex">
-        <img src="Logo.png" alt="QuantRealmTech Logo" />
+        <img src="Logo.png" alt="QuantRealmTech Logo" class="site-logo">
         <div>
           <div class="brand-title">QuantRealm<span>TECH</span></div>
           <div class="tagline">Unlocking Realms of Possibility</div>
